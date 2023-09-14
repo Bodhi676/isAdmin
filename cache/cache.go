@@ -10,6 +10,16 @@ type UserID struct {
 	id uint64
 }
 
+func NewUser(value uint64) UserID {
+	usr := new(UserID)
+	usr.id = value
+	return *usr
+}
+
+func (u *UserID) GetUser() uint64 {
+	return u.id
+}
+
 type Cache struct {
 	sync.RWMutex
 	defaultExpiration time.Duration

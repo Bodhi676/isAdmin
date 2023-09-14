@@ -12,10 +12,11 @@ func main() {
 	Mycache := cache.New(5*time.Minute, 10*time.Minute)
 
 	// Установить кеш с ключем 365557(uint64) и временем жизни 5 минут
-	Mycache.Set(365557, true, 5*time.Minute)
+	usr := cache.NewUser(365557)
+	Mycache.Set(usr.GetUser(), true, 5*time.Minute)
 
 	// Получить кеш с ключем 365557
-	i, _ := Mycache.Get(365557)
+	i, _ := Mycache.Get(usr.GetUser())
 
 	fmt.Println(i) // true ёпта
 }
