@@ -20,3 +20,13 @@ func main() {
 
 	fmt.Println(i) // true ёпта
 }
+
+// gRPC запрос
+func SetUserAdmin(id uint64) uint64 {
+	return id
+}
+
+// gRPC ответ
+// func GetUserIsAdmin(id cache.UserID) bool {
+
+// }

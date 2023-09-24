@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "google.golang.org/grpc/examples/route_guide/routeguide";
+
+// Interface exported by the server.
+service RouteGuide {
+
+  rpc SetUserAdmin(uint64) returns (UserID) {}
+
+  rpc GetUserIsAdmin(UserID) returns (bool) {}
+}
+
+message UserID {
+  uint64 id = 1;
+}

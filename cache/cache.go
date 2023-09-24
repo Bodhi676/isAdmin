@@ -20,6 +20,7 @@ func (u *UserID) GetUser() uint64 {
 	return u.id
 }
 
+// структура кэша
 type Cache struct {
 	sync.RWMutex
 	defaultExpiration time.Duration
@@ -46,7 +47,7 @@ func New(defaultExpiration, cleanupInterval time.Duration) *Cache {
 
 	// Если интервал очистки больше 0, запускаем GC (удаление устаревших элементов)
 	if cleanupInterval > 0 {
-		cache.StartGC() // данный метод рассматривается ниже
+		cache.StartGC() 
 	}
 
 	return &cache
