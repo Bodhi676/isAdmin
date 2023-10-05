@@ -5,9 +5,9 @@ option go_package = "google.golang.org/grpc/examples/route_guide/routeguide";
 // Interface exported by the server.
 service RouteGuide {
 
-  rpc SetUserAdmin(uint64) returns (UserID) {}
+  rpc SetUserToAdmin(uint64) returns () {}
 
-  rpc GetUserIsAdmin(UserID) returns (bool) {}
+  rpc GetUserStatus(UserID) returns (bool) {}
 }
 
 message UserID {

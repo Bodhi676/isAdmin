@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+const (
+	AdminTime      = 5 * time.Minute
+	ClearCacheTime = 10 * time.Minute
+)
+
 type UserID struct {
 	id uint64
 }
@@ -47,7 +52,7 @@ func New(defaultExpiration, cleanupInterval time.Duration) *Cache {
 
 	// Если интервал очистки больше 0, запускаем GC (удаление устаревших элементов)
 	if cleanupInterval > 0 {
-		cache.StartGC() 
+		cache.StartGC()
 	}
 
 	return &cache
